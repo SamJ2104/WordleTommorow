@@ -216,17 +216,9 @@ function drawVirtualKeyboard(container) {
 }
 
 function handleVirtualKeyPress(key) {
-  if (key === 'Enter' || key === '↵') { // Check for Enter key or virtual keyboard Enter button
-    if (state.currentCol === 5) {
-      const word = getCurrentWord();
-      if (isWordValid(word)) {
-        revealWord(word);
-        state.currentRow++;
-        state.currentCol = 0;
-      } else {
-        alert('Invalid word');
-      }
-    }
+  if (key === 'Enter' || key === '↵') {
+    // Handle Enter key press
+    handleKey('Enter');
   } else if (key === 'Backspace') {
     removeLetter();
   } else {
