@@ -1,0 +1,166 @@
+html, body {
+  background: var(--default);
+}
+
+:root {
+  --default: #121213;
+  --empty: #3a3a3c;
+  --wrong: #b59f3b;
+  --right: #538d4e;
+}
+
+#game {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  margin-top: 2rem; /* Reduce the top margin */
+  width: 100%;
+  height: auto; /* Adjust height to auto */
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: repeat(6, auto);
+  grid-template-columns: repeat(5, auto);
+}
+
+.box {
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--empty);
+  margin: 4px;
+  color: white;
+  text-transform: uppercase;
+  display: grid;
+  place-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.4rem;
+}
+
+.box.empty {
+  background: var(--empty);
+}
+
+.box.wrong {
+  background: var(--wrong);
+}
+
+.box.right {
+  background: var(--right);
+}
+
+.animated {
+  animation: flip 0.5s ease;
+}
+
+@keyframes flip {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.title {
+  color: white;
+  text-align: center;
+  font-family: 'nyt-karnak','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 3rem;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.title-word-clone {
+  position: absolute;
+  left: calc(50% + 50px);
+  transform: rotate(25deg);
+  color: #a871d9;
+  font-size: 1rem;
+}
+
+hr {
+  border-style: solid;
+  border-color: var(--empty);
+  border-width: 1px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.v-separator {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.social-media-link {
+  display: flex;
+  fill: white;
+  width: 25px;
+  height: 25px;
+  margin-right: 0.75rem;
+}
+
+#keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem; /* Reduce the top margin */
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.key {
+  width: 43px;
+  height: 58px;
+  margin: 0 4px;
+  border: 1px solid var(--empty);
+  border-radius: 4px;
+  background: var(--empty);
+  color: white;
+  text-transform: uppercase;
+  display: grid;
+  place-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.key.enter {
+  width: 83px;
+}
+
+.key.wide {
+  width: 63px;
+}
+
+.key.right {
+  background: var(--right);
+}
+
+.key.wrong {
+  background: var(--wrong);
+}
+
+.key.empty {
+  background: var(--empty);
+}
+@font-face {
+  font-family: 'nyt-karnak';
+  src: url('Karnak.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
