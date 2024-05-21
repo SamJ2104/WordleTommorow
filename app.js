@@ -216,7 +216,7 @@ function drawVirtualKeyboard(container) {
 }
 
 function handleVirtualKeyPress(key) {
-  if (key === 'Enter') {
+  if (key === 'Enter' || key === '↵') { // Check for Enter key or virtual keyboard Enter button
     if (state.currentCol === 5) {
       const word = getCurrentWord();
       if (isWordValid(word)) {
