@@ -206,13 +206,21 @@ function drawVirtualKeyboard(container) {
       keyDiv.className = 'key';
       keyDiv.textContent = key === 'Backspace' ? '⌫' : key;
       keyDiv.dataset.key = key.toLowerCase();
-      keyDiv.onclick = () => handleKey(key);
+      if (key === '↵') {
+        keyDiv.onclick = () => handleVirtualEnterPress();
+      } else {
+        keyDiv.onclick = () => handleKey(key);
+      }
       rowDiv.appendChild(keyDiv);
     });
     keyboard.appendChild(rowDiv);
   });
 
   container.appendChild(keyboard);
+}
+
+function handleVirtualEnterPress() {
+  handleKey('Enter');
 }
 
 function handleVirtualKeyPress(key) {
