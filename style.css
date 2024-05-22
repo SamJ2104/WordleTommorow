@@ -152,7 +152,7 @@ hr {
 }
 
 .key.wrong {
-  background: var(--wrong);
+  background: var(--empty);
 }
 
 .key.empty {
